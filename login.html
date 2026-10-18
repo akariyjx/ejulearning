@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.example.com; media-src 'self' blob:; img-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#164f46">
+ <title>学生内测登录 · 聴くラボ</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="login.css">
+</head>
+<body>
+ <main class="login-layout">
+  <section class="intro"><a class="brand" href="login.html">聴くラボ <small>EJU LISTENING LAB</small></a><span class="eyebrow">STUDENT PREVIEW · 学生内测</span><h1>听见逻辑，<br>积累表达。</h1><p>真题练习、生词整理与逐句精听，<br>让每一次认真听，都留下积累。</p><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="range">2005 — 2024 · EJU 真题资料库</span></section>
+  <section class="login-card" aria-labelledby="login-title"><span class="card-label">你的练习桌</span><h2 id="login-title">登录，开始今天的练习。</h2><p class="description">请输入老师提供的账号和密码。</p><form id="login-form"><label for="username">账号</label><input id="username" name="username" autocomplete="username" required maxlength="100" placeholder="输入账号"><label for="password">密码</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256" placeholder="输入密码"><button id="toggle-password" type="button" aria-pressed="false">显示</button></div><p id="login-error" role="alert" aria-live="polite"></p><button class="submit" type="submit">登录练习室 <span aria-hidden="true">→</span></button></form><p class="storage-note">练习进度和生词本保存在当前浏览器。<br>共用测试账号时，各设备分别记录；换设备前请导出备份。</p></section>
+ </main><script type="module" src="login.js"></script>
+</body></html>

@@ -1,0 +1,5 @@
+/* Navigation entry for the vocabulary reaction page. */
+.nav .rapid-nav-link{color:#c9d9bd;display:flex;align-items:center;gap:13px;padding:14px 16px;border-radius:10px;text-decoration:none;font-size:14px}
+.nav .rapid-nav-link:hover{background:#234d43}
+@media(min-width:541px) and (max-width:800px){.nav .rapid-nav-link{font-size:0;justify-content:center;padding:15px}.nav .rapid-nav-link span{display:none}}
+@media(max-width:540px){.nav .rapid-nav-link{flex:1;min-width:0;flex-direction:column;font-size:9px;padding:6px 4px;gap:3px}.nav .rapid-nav-link svg{width:18px;height:18px}.nav .rapid-nav-link span{display:block;white-space:nowrap}}

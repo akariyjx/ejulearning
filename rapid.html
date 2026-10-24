@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://tips-coordinated-concerning-keep.trycloudflare.com; media-src 'self' blob:; img-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#143e37">
+  <meta name="description" content="EJU 全题库听力词汇与表达快速反应，按年份、场次和题目练习，支持离线音频、错词回练与进度备份。">
+  <title>听力快速反应 · 聴くラボ</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="rapid.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到练习内容</a>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <a class="brand" href="./index.html#year" data-main-link><span class="brand-mark" data-icon="headphones"></span><span><strong>聴くラボ</strong><small>EJU LISTENING LAB</small></span></a>
+      <div class="nav-label">我的练习桌</div>
+      <nav aria-label="主导航" class="main-nav">
+        <a href="./index.html#year" data-main-link><span data-icon="calendar"></span><span>按年份刷题</span></a>
+        <a href="./index.html#topic" data-main-link><span data-icon="grid"></span><span>按主题刷题</span></a>
+        <a href="#practice" class="active" aria-current="page"><span data-icon="bolt"></span><span>听力快速反应</span><i>NEW</i></a>
+        <a href="./index.html#wordbook" data-main-link><span data-icon="book"></span><span>我的生词本</span></a>
+        <a href="./index.html#history" data-main-link><span data-icon="chart"></span><span>刷题记录</span></a>
+      </nav>
+      <div class="side-tip"><span class="side-tip-line"></span><p>听见，就能反应。</p><small>从熟悉一个声音开始，<br>让理解慢慢成为直觉。</small><div class="side-wave" aria-hidden="true"></div><span>EJU 日本語 · 毎日の積み重ね</span></div>
+    </aside>
+    <main id="main" class="main">
+      <header class="topbar"><div class="breadcrumb"><span>聴くラボ</span><b>/</b>听力快速反应</div><div class="top-actions"><span class="save-status"><i></i><span id="save-status">进度保存在本浏览器</span></span><span id="account"></span><button class="icon-button" id="help" aria-label="练习说明" title="练习说明" data-icon="help"></button></div></header>
+      <section class="hero">
+        <div><div class="eyebrow">LISTEN. REACT. REMEMBER.</div><h1>让听懂，<span>快一点。</span></h1><p>从基础到全题库，把词汇放回真题。<br class="mobile-break">听见日语，立刻连接意思。</p><div class="hero-tags"><span>全题库覆盖</span><span>词条离线音频</span><span>按题回练</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="art-caption">今日も、耳から。</div><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><div class="art-kanji">聴</div><div class="art-wave"></div><div class="art-foot">A LITTLE FASTER, EVERY DAY <span>↗</span></div></div>
+      </section>
+      <section class="library-choices" aria-label="选择词库">
+        <button class="library-choice selected" data-library="corpus" aria-pressed="true"><span class="library-icon" data-icon="layers"></span><span class="library-text"><strong>全题库词汇 / 表达</strong><small id="corpus-caption">2005–2024 · 全部可用原文</small></span><span class="library-count" id="corpus-count">—<small>条</small></span><span class="choice-check" data-icon="check"></span></button>
+        <button class="library-choice" data-library="focus" aria-pressed="false"><span class="library-icon" data-icon="spark"></span><span class="library-text"><strong>原参考重点词库</strong><small>2011 年第 1 回 · 听解 13–27 题</small></span><span class="library-count">247<small>条</small></span><span class="choice-check" data-icon="check"></span></button>
+        <button class="library-choice" data-library="basic" aria-pressed="false"><span class="library-icon sand" data-icon="layers"></span><span class="library-text"><strong>听力基础词汇</strong><small>汉语词 150 · 和语词 150</small></span><span class="library-count">300<small>条</small></span><span class="choice-check" data-icon="check"></span></button>
+        <button class="library-choice mix" data-library="all" aria-pressed="false"><span class="library-icon" data-icon="shuffle"></span><span class="library-text"><strong>混合训练</strong><small>连接基础与实战</small></span><span class="choice-check" data-icon="check"></span></button>
+      </section>
+      <section class="corpus-scope" aria-label="真题来源筛选"><div class="scope-heading"><strong>从哪一套开始？</strong><span id="coverage-summary">正在整理真题来源…</span></div><div class="scope-fields"><label>年份<select id="scope-year"><option value="all">全部年份</option></select></label><label>场次<select id="scope-paper"><option value="all">全部场次</option></select></label><label>题目部分<select id="scope-section"><option value="all">听解 + 听读解</option><option value="聴解">听解</option><option value="聴読解">听读解</option></select></label><label>题号<select id="scope-question"><option value="all">先选择场次</option></select></label></div><div class="scope-bottom"><span id="scope-description">同一词的重复出处会合并保留。</span><button class="text-button" id="clear-scope">清除来源筛选</button></div></section>
+      <div class="workspace-heading"><div class="view-tabs" role="tablist" aria-label="学习功能"><button role="tab" id="tab-practice" data-view="practice" aria-controls="view-practice" aria-selected="true" class="active"><span data-icon="bolt"></span>快速训练</button><button role="tab" id="tab-library" data-view="library" aria-controls="view-library" aria-selected="false"><span data-icon="book"></span>词库总览</button><button role="tab" id="tab-review" data-view="review" aria-controls="view-review" aria-selected="false"><span data-icon="refresh"></span>待复习<span id="review-badge" class="count-badge">0</span></button></div><span class="daily-note" id="daily-note">每天一点，让耳朵跟上。</span></div>
+      <section id="view-practice" role="tabpanel" aria-labelledby="tab-practice">
+        <div class="practice-layout">
+          <div class="practice-column">
+            <div class="practice-card" id="practice-card">
+              <div class="practice-top"><div class="segmented" aria-label="训练节奏"><button class="active" data-pace="flow" aria-pressed="true">限时反应</button><button data-pace="slow" aria-pressed="false">慢速确认</button></div><span class="question-count" id="question-count">准备就绪</span></div>
+              <div class="session-track"><span id="session-progress"></span></div>
+              <div id="stage" class="stage" aria-live="polite"><div class="loading">正在准备词库与音频…</div></div>
+              <div class="session-footer"><span><i class="legend-dot"></i>本轮答对 <b id="round-correct">0</b></span><span><i class="legend-dot peach"></i>待巩固 <b id="round-wrong">0</b></span><span id="session-average">平均反应 —</span></div>
+            </div>
+            <div class="practice-hint"><span data-icon="bulb"></span><div><strong>先听清，再求快。</strong><p>倒计时从音频结束后开始。超时不会自动显示答案，你可以再听一次，再主动揭晓。</p></div></div>
+            <div class="keyboard-hints"><span><kbd>Enter</kbd>提交 / 揭晓 / 下一条</span><span><kbd>Alt</kbd> + <kbd>R</kbd>重听</span><span><kbd>Esc</kbd>暂停</span></div>
+          </div>
+          <aside class="settings-panel" aria-label="练习设置"><div class="panel-title"><h2>定制你的节奏</h2><span data-icon="sliders"></span></div><p class="settings-lead">适合自己的速度，就是好速度。</p>
+            <label class="setting-label" for="group-select">练习范围 <span id="pool-count">— 条</span></label><select id="group-select"><option value="all">全部题目</option></select>
+            <div class="setting-row"><div><label for="kind-select" class="setting-label">内容类型</label><select id="kind-select"><option value="all">单词 + 表达</option><option value="word">只练单词</option><option value="expression">只练表达</option></select></div><div><label for="amount-select" class="setting-label">本轮数量</label><select id="amount-select"><option value="10">10 条</option><option value="20" selected>20 条</option><option value="30">30 条</option><option value="50">50 条</option><option value="100">100 条</option><option value="all">全部</option></select></div></div>
+            <div class="setting-label">反应时间 <span id="time-caption">音频结束后计时</span></div><div class="time-presets" role="group" aria-label="每条反应时间"><button data-seconds="3" class="selected" aria-pressed="true">3<span>秒</span></button><button data-seconds="5" aria-pressed="false">5<span>秒</span></button><button data-seconds="8" aria-pressed="false">8<span>秒</span></button><button data-seconds="12" aria-pressed="false">12<span>秒</span></button><button data-seconds="20" aria-pressed="false">20<span>秒</span></button><button data-seconds="30" aria-pressed="false">30<span>秒</span></button></div>
+            <div class="setting-row"><div><label for="speed-select" class="setting-label">播放速度</label><select id="speed-select"><option value="0.75">0.75×</option><option value="1" selected>1.0×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></div><div><label for="order-select" class="setting-label">出题顺序</label><select id="order-select"><option value="shuffle">随机顺序</option><option value="sequence">按词库顺序</option></select></div></div>
+            <div class="settings-divider"></div><label class="toggle-row"><span>播放词条音频</span><input type="checkbox" id="sound-toggle" checked role="switch"><i></i></label><label class="toggle-row"><span>揭晓后自动下一条</span><input type="checkbox" id="auto-toggle" role="switch"><i></i></label><p class="setting-footnote" id="auto-note">默认手动翻条，留一点理解的时间。</p>
+            <button class="primary-button wide" id="start-session">开始训练 <span data-icon="arrow"></span></button><button class="text-button wide" id="reset-settings">恢复默认设置</button>
+          </aside>
+        </div>
+      </section>
+      <section id="view-library" role="tabpanel" aria-labelledby="tab-library" hidden><div class="list-toolbar"><div><h2>听过的声音，记住的表达。</h2><p id="library-description">完整词库，可搜索日语、读音或中文。</p></div><label class="search-box"><span data-icon="search"></span><input id="library-search" type="search" placeholder="搜索单词、读音、中文…" aria-label="搜索词库"></label></div><div class="list-filters"><select id="browse-group" aria-label="词库分组"><option value="all">全部分组</option></select><select id="browse-kind" aria-label="词库类型"><option value="all">单词 + 表达</option><option value="word">只看单词</option><option value="expression">只看表达</option></select><span id="browse-count"></span></div><div id="word-list" class="word-grid"></div><button id="load-more" class="secondary-button more-button" hidden>再看 30 条</button></section>
+      <section id="view-review" role="tabpanel" aria-labelledby="tab-review" hidden><div class="list-toolbar"><div><h2>再听一遍，会更熟一点。</h2><p>超时、跳过和未掌握的词会自动来到这里。答对后移出。</p></div><button class="primary-button" id="start-review">只练待复习 <span data-icon="arrow"></span></button></div><div class="review-tools"><span id="review-count">暂无待复习词条</span><div><button class="text-button" id="export-progress"><span data-icon="download"></span>导出进度</button><button class="text-button" id="import-progress"><span data-icon="upload"></span>导入进度</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></div><div id="review-list" class="word-grid"></div></section>
+      <footer class="footer"><span>聴くラボ <b>·</b> EJU LISTENING LAB</span><span>聞く力は、積み重ね。<span class="footer-rule"> / </span>每天，听懂多一点。</span></footer>
+    </main>
+  </div>
+  <div class="toast" role="status" id="toast"></div>
+  <dialog id="help-dialog"><div class="dialog-header"><h2>把听懂，练成反应。</h2><button class="icon-button" data-close-dialog aria-label="关闭说明" data-icon="close"></button></div><div class="dialog-body"><ol><li>选择全题库、原参考重点、基础或混合训练，按年份、场次、听力部分和题号筛选。</li><li>点击开始，听词条音频，输入中文意思、日语原词或读音。</li><li>按 Enter 核对。表达未匹配时可继续尝试，也可揭晓后自行确认。</li><li>音频结束后开始计时；超时先暂停，手动揭晓。未掌握词自动加入待复习。</li></ol><p id="coverage-help">全题库来自现有36套真题的1097道有原文题，统一辞书形并保留每个词的题目出处。缺原文的5题不编造内容。整理包含自动分词与词典匹配，原资料OCR与词义匹配仍可能需要结合上下文核对。</p><p>全题库新增音频使用 Edge TTS 的 ja-JP-NanamiNeural 声音，已生成并随网页提供，播放无需在线合成。原参考重点247条、基础300条及其音频继续保留，旧版练习记录可继续使用。混合训练会合并同一写法的重复词。</p><p>核对使用词条答案别名，不是AI语义评分。进度仅保存在当前浏览器，可导出备份；与真题刷题次数独立。</p><details class="data-credits"><summary>词汇来源与署名</summary><div id="dictionary-credits">用户提供真题与参考页；既有教学词库；日中词典补充数据。</div></details></div></dialog>
+  <script src="rapid-core.js"></script>
+  <script src="rapid.js" defer></script>
+</body>
+</html>
